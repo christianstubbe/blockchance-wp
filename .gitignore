@@ -5,6 +5,7 @@
 .RData
 .DS_Store
 wordpress/*
+!wordpress/wp-content
 !wordpress/.keep
 mysql/*
 !mysql/.keep
