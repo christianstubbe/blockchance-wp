@@ -23,6 +23,11 @@ This is the blockchance MVP v1 backend. It is a Docker based Wordpress applicati
 
 Note: Even after the container is running, you might need to wait a few minutes until Wordpress and phpMyAdmin is accessible. 
 
+#Useful Docker Commands
+
+- **docker-compose up -d --build**  <- Build and start the wordpress website
+- **docker-compose down**  <- Stop and remove containers
+
 
 
 
