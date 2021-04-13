@@ -27,7 +27,6 @@ jobs:
         server: hosting122485.a2fc1.netcup.net
         username: bcmedia
         password: ${{ secrets.FTP_PASSWORD }}
-        dry-run: true
         local-dir: ./wordpress/wp-content/themes/blockchance-academy/
         server-dir: ./wp-content/themes/blockchance-academy/
 
