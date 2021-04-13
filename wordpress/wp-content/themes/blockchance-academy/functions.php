@@ -140,10 +140,12 @@ add_action( 'widgets_init', 'blockchance_academy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function blockchance_academy_scripts() {
+	wp_enqueue_style( 'blockchance-foundation', 'https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css' );
 	wp_enqueue_style( 'blockchance-academy-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'blockchance-academy-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'blockchance-academy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'blockchance-foundation', 'https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js', array('jquery') );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
