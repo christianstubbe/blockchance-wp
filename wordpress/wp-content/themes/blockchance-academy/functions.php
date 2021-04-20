@@ -61,7 +61,9 @@ if ( ! function_exists( 'blockchance_academy_setup' ) ) :
 						'name'          => __('Definition', 'textdomain'),
 						'singular_name' => __('Definition', 'textdomain'),
 					),
-						'public'      => true,
+					'public'      => true,
+					'show_in_rest' => true,
+            		'supports' => array('editor')
 				)
 			);
 			register_post_type('report',
@@ -70,7 +72,9 @@ if ( ! function_exists( 'blockchance_academy_setup' ) ) :
 						'name'          => __('Bericht', 'textdomain'),
 						'singular_name' => __('Bericht', 'textdomain'),
 					),
-						'public'      => true,
+					'public'      => true,
+					'show_in_rest' => true,
+            		'supports' => array('editor')
 				)
 			);
 			register_post_type('interview',
@@ -79,7 +83,9 @@ if ( ! function_exists( 'blockchance_academy_setup' ) ) :
 						'name'          => __('Interview', 'textdomain'),
 						'singular_name' => __('Interview', 'textdomain'),
 					),
-						'public'      => true,
+					'public'      => true,
+					'show_in_rest' => true,
+            		'supports' => array('editor')
 				)
 			);
 			register_post_type('press-release',
@@ -88,7 +94,9 @@ if ( ! function_exists( 'blockchance_academy_setup' ) ) :
 						'name'          => __('Pressebericht', 'textdomain'),
 						'singular_name' => __('Pressebericht', 'textdomain'),
 					),
-						'public'      => true,
+					'public'      => true,
+					'show_in_rest' => true,
+            		'supports' => array('editor')
 				)
 			);
 			register_post_type('comment',
@@ -97,7 +105,9 @@ if ( ! function_exists( 'blockchance_academy_setup' ) ) :
 						'name'          => __('Kommentar', 'textdomain'),
 						'singular_name' => __('Kommentar', 'textdomain'),
 					),
-						'public'      => true,
+					'public'      => true,
+					'show_in_rest' => true,
+            		'supports' => array('editor')
 				)
 			);
 			register_post_type('professional-article',
@@ -106,7 +116,9 @@ if ( ! function_exists( 'blockchance_academy_setup' ) ) :
 						'name'          => __('Fachartikel', 'textdomain'),
 						'singular_name' => __('Fachartikel', 'textdomain'),
 					),
-						'public'      => true,
+					'public'      => true,
+					'show_in_rest' => true,
+            		'supports' => array('editor')
 				)
 			);
 		}
