@@ -25,20 +25,27 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'blockchance-academy' ); ?></a>
 
-	<header id="masthead" class="grid-x site-header grid-padding-x grid-margin-x align-justify">
-			<div class="cell small-10 medium-3 site-branding">
-				<?php the_custom_logo(); ?>
-			</div><!-- .site-branding -->
+	<header id="masthead" class="grid-wrapper site-header" data-sticky-container>
+		<div data-sticky data-margin-top="0">
+			<div class="grid-container" >
+				<div class="grid-x align-justify align-middle" >
 
-			<nav id="site-navigation" class="cell shrink main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'blockchance-academy' ); ?></button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					)
-				);
-				?>
-			</nav><!-- #site-navigation -->
+				<div class="cell small-10 medium-3 site-branding">
+					<?php the_custom_logo(); ?>
+				</div><!-- .site-branding -->
+
+				<nav id="site-navigation" class="cell shrink main-navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'blockchance-academy' ); ?></button>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>
+				</nav><!-- #site-navigation -->
+				</div>
+			</div>
+		</div>
 	</header><!-- #masthead -->
