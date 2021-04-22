@@ -11,21 +11,39 @@
 
 ?>
 
+<!-- <div class="grid-wrapper" id="word-cloud">
+	<div class="grid-x align-center">
+		<div class="cell">
+
+		</div>
+	</div>
+</div> -->
+
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blockchance-academy' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'blockchance-academy' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'blockchance-academy' ), 'blockchance-academy', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+		<div class ="grid-x align-spaced">
+			<div class="cell small-3">
+				<div class="cell"><a href="https://www.t.me/blockchance">Telegram</a></div>
+				<div class="cell"><a href="https://twitter.com/blockchance_">Twitter</a></div>
+				<div class="cell"><a href="https://www.youtube.com/c/blockchance">YouTube</a></div>
+				<div class="cell"><a href="https://www.linkedin.com/company/blockchance1">Linkedin</a></div>
+				<div class="cell"><a href="">Reddit</a></div>
+				<div class="cell"><a href="">TikTok</a></div>
+			</div>
+  			<div class="cell small-3">
+			  <div class="cell">Hamburg office:</div>
+			  <div class="cell">BLOCKCHANCE</div>
+			  <div class="cell">Kleine Johannisstraße 9</div>
+			  <div class="cell">20457 Hamburg</div>
+			  <div class="cell">Germany</div>
+			</div>
+			<div class="cell small-3">
+			<div class="cell"><a href="">Imprint</a></div>
+				<div class="cell"><a href="">Privacy</a></div>
+				<div class="cell"><a href="">legal</a></div>
+				<div class="cell">© 2021 Blockchance</div>
+			</div>
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
