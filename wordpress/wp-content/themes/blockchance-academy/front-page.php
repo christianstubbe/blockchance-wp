@@ -15,28 +15,32 @@
 get_header();
 ?>
 
-<!--- #hero ------------------>
-<div class="grid-wrapper" id="hero">
-	<div class="grid-x align-center">
-		<div class="cell">
-			<h1 class="page-title"><?php single_post_title(); ?></h1>
-			<?php blockchance_academy_post_thumbnail(); ?>
-		</div>
-	</div>
-</div>
+<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-<!--- #site-main ------------------>
-<main class="grid-wrapper" id="site-main">
-	<div class="grid-container">
-		<div class="grid-x">
-			<?php if ( have_posts() ) : ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php the_content(); ?>
-				<?php endwhile; ?>
-			<?php endif; ?>
+		<!--- #hero ------------------>
+		<div class="grid-wrapper" id="hero">
+			<div class="grid-container">
+				<div class="grid-x align-middle">
+					<div class="cell small-12 medium-6">
+						<h1 class="page-title"><?php single_post_title(); ?></h1>
+					</div>
+				</div>
+			</div>
+			<?php the_post_thumbnail(); ?>
 		</div>
-	</div>
-</main>
+
+		<!--- #site-main ------------------>
+		<main class="grid-wrapper" id="site-main">
+			<div class="grid-container">
+				<div class="grid-x">
+					<?php the_content(); ?>
+				</div>
+			</div>
+		</main>
+
+	<?php endwhile; ?>
+<?php endif; ?>
 
 <?php
 get_footer();
