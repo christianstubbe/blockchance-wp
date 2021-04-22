@@ -28,8 +28,13 @@ get_header();
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<p>
-                        
-                        You might want to check out: <a href="#" class="button" target="_self">Cryptocurrency!</a><a href="#" class="button" target="_self">Bitcoin</a> 
+                        <div class="grid-container">
+                            <div class="grid-x">
+                                <div class="cell small-8"><h3>You might want to check out:<h3></div>
+                                <div class="cell small-4"><a href="#" class="button" target="_self">Cryptocurrency!</a><a href="#" class="button" target="_self">Bitcoin</a></div>
+                            </div>
+                        </div>
+                         
                     </div>
                     <div class="cell" style="background-color:darkblue">
                         <h3>Get in-depth knowledge on <?php single_tag_title();?></h3>
@@ -54,21 +59,72 @@ get_header();
                         </div>
                     </div>
                     <div class="cell" style="background-color:darkred">
-                        Speaker
+                        <div class="grid-container">
+                            <div class="grid-x grid-margin-x">
+                                <div class="cell">
+                                    <h3>Listen to our international speakers</h3>
+                                </div>
+                                <?php
+                                    $authors = wp_list_authors(array(
+                                        'show_fullname' => 1,
+                                        'exclude_admin' => 0,
+                                        'optioncount'   => 0,
+                                        'echo'          => 0,
+                                        'orderby'       => 'post_count',
+                                        'order'         => 'DESC',
+                                        'number'        => 3,
+                                        'style'         => 0,
+                                        'html'          => 0
+                                    ));
+                                    #dummy data
+                                    $authors = array("Annemarie", "Hans", "Kim");
+
+                                    foreach ($authors as $author) {
+                                        echo "
+                                            <div class=\"cell small-4\" style=\"background-color:red\">
+                                               <img src=\"#\" alt=\"$author\">
+                                               <p>Hi, I'm $author ... Author description</p>
+                                            </div>
+                                            ";
+                                    }
+                                ?>
+                            </div>
+                        </div>    
                     </div>
-                    <div class="cell" style="background-color:red">
-                        Read our articles - not needed ??
+                    <div class="cell" style="background-color:green">
+                        <p>Read our articles - not needed ?? Watch our Webinar listet alles zum Tag blockchain. Ich wollte keinen Slider einbauen.. </p>
                     </div>
-                    <div class="cell" style="background-color:pink">
-                        Over 70 courses
+                    <div class="cell" style="background-color:hotpink">                    
+                        <div class="grid-container">
+                            <div class="grid-x grid-margin-x">
+                                <div class="cell small-8">
+                                    <h3>Over 70 Online Courses</h3>
+                                </div>
+                                <div class="cell small-4">
+                                    <a href="#" class="button" target="_self">Show Bestseller</a>
+                                </div>
+                                
+                                <?php
+                                    #ToDo: get all courses from somewhere
+                                    #dummy data
+                                    $courses = array("Era of Cooperation", "Data Security", "Network Society");
+
+                                    foreach ($courses as $course) {
+                                        echo "
+                                            <div class=\"cell small-4\" style=\"background-color:pink\">
+                                                <img src=\"#\" alt=\"$course\">
+                                                <p>Course Description</p>
+                                            </div>
+                                            ";
+                                    }
+                                ?>
+                            </div>
+                        </div>    
                     </div>
                 </div>
             </div>
-
-
-
 	</main><!-- #main -->
 
 <?php
 //get_sidebar(); might need later
-get_footer();
+//get_footer(); might need later
