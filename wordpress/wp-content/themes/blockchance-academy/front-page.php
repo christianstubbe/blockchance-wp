@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * The home template file
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -14,6 +14,14 @@
 
 get_header();
 ?>
+
+<!-- <div class="grid-wrapper" id="word-cloud">
+	<div class="grid-x align-center">
+		<div class="cell">
+
+		</div>
+	</div>
+</div> -->
 
 	<main id="primary" class="site-main">
 
@@ -34,7 +42,7 @@ get_header();
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 				<?php blockchance_academy_post_thumbnail(); ?>
-				
+
 				<div class="entry-content">
 					<?php
 					the_content();

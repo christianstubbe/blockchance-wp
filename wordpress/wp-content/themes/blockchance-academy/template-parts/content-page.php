@@ -16,6 +16,7 @@
 
 	<?php blockchance_academy_post_thumbnail(); ?>
 
+<h1>Page > Content </h1>
 	<div class="entry-content">
 		<?php
 		the_content();
