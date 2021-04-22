@@ -1,6 +1,28 @@
-body {
+/* Typography
+--------------------------------------------- */
+
+body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Nunito Sans', sans-serif;
 }
+
+h1 {
+    color: #fff;
+    font-size: 2.8em;
+}
+
+button, .button, .button.disabled, .button.disabled:focus, .button.disabled:hover, .button[disabled], .button[disabled]:focus, .button[disabled]:hover {
+    background-color: #FF6135;
+    color: #ffffff;
+    border-radius: 15px;
+}
+
+button:focus, .button:hover {
+    background: #111;
+}
+
+
+/* Header
+--------------------------------------------- */
 
 header#masthead > div {
     background: #fff;
@@ -17,16 +39,6 @@ header#masthead > div.is-anchored {
     padding-bottom: 10px;
 }
 
-button, .button, .button.disabled, .button.disabled:focus, .button.disabled:hover, .button[disabled], .button[disabled]:focus, .button[disabled]:hover {
-    background-color: #FF6135;
-    color: #ffffff;
-    border-radius: 15px;
-}
-
-button:focus, .button:hover {
-    background: #111;
-}
-
 .menu .button {
     padding: 0;
     margin: 0;
@@ -39,4 +51,27 @@ button:focus, .button:hover {
 
 .menu a:hover {
     color: #FF6135;
+}
+
+/* Hero
+--------------------------------------------- */
+
+#hero {
+    position: relative;
+    overflow: hidden;
+}
+
+#hero .grid-x {
+    height: 500px;
+}
+
+#hero .page-title {
+    z-index: 1;
+    position: relative;
+}
+
+#hero img {
+    position: absolute;
+    top: 0;
+    z-index: 0;
 }
