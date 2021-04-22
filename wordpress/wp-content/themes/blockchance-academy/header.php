@@ -25,35 +25,27 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'blockchance-academy' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$blockchance_academy_description = get_bloginfo( 'description', 'display' );
-			if ( $blockchance_academy_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $blockchance_academy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<header id="masthead" class="grid-wrapper site-header" data-sticky-container>
+		<div data-sticky data-margin-top="0">
+			<div class="grid-container" >
+				<div class="grid-x align-justify align-middle" >
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'blockchance-academy' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+				<div class="cell small-10 medium-3 site-branding">
+					<?php the_custom_logo(); ?>
+				</div><!-- .site-branding -->
+
+				<nav id="site-navigation" class="cell shrink main-navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'blockchance-academy' ); ?></button>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>
+				</nav><!-- #site-navigation -->
+				</div>
+			</div>
+		</div>
 	</header><!-- #masthead -->

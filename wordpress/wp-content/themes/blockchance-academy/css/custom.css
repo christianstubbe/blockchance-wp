@@ -1,0 +1,42 @@
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+header#masthead > div {
+    background: #fff;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+    transition: all .2s ease-in-out;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+header#masthead > div.is-anchored {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+button, .button, .button.disabled, .button.disabled:focus, .button.disabled:hover, .button[disabled], .button[disabled]:focus, .button[disabled]:hover {
+    background-color: #FF6135;
+    color: #ffffff;
+    border-radius: 15px;
+}
+
+button:focus, .button:hover {
+    background: #111;
+}
+
+.menu .button {
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    padding: .7rem;
+    color: #111;
+}
+
+.menu a:hover {
+    color: #FF6135;
+}

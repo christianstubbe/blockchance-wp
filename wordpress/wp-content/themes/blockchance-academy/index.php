@@ -29,17 +29,51 @@ get_header();
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			while ( have_posts() ) : the_post(); ?>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			endwhile;
+				<?php blockchance_academy_post_thumbnail(); ?>
+				
+				<div class="entry-content">
+					<?php
+					the_content();
+
+					wp_link_pages(
+						array(
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blockchance-academy' ),
+							'after'  => '</div>',
+						)
+					);
+					?>
+				</div><!-- .entry-content -->
+
+				<?php if ( get_edit_post_link() ) : ?>
+					<footer class="entry-footer">
+						<?php
+						edit_post_link(
+							sprintf(
+								wp_kses(
+									/* translators: %s: Name of current post. Only visible to screen readers */
+									__( 'Edit <span class="screen-reader-text">%s</span>', 'blockchance-academy' ),
+									array(
+										'span' => array(
+											'class' => array(),
+										),
+									)
+								),
+								wp_kses_post( get_the_title() )
+							),
+							'<span class="edit-link">',
+							'</span>'
+						);
+						?>
+					</footer><!-- .entry-footer -->
+				<?php endif; ?>
+			</article><!-- #post-<?php the_ID(); ?> -->
+
+
+			<?php endwhile;
 
 			the_posts_navigation();
 
