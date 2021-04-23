@@ -75,3 +75,16 @@ header#masthead > div.is-anchored {
     top: 0;
     z-index: 0;
 }
+
+/* Footer
+--------------------------------------------- */
+
+footer#colophon {
+    padding: 30px 200px 0px 200px;
+    color: #999999;
+    font-size: 0.9em;
+}
+
+footer#colophon a{
+    color: #999999;
+}
