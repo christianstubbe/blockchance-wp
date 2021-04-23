@@ -25,9 +25,7 @@ get_header();
                 <div class="grid-y" >
                     <div class="cell" style="background-color:blue">
                         <h2>Current Tag: <?php single_tag_title(); ?></h2>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<p>
+                        <p><?php tag_description();?></p>
                         <div class="grid-container">
                             <div class="grid-x">
                                 <div class="cell small-8"><h3>You might want to check out:<h3></div>
@@ -94,35 +92,59 @@ get_header();
                                 <div class="cell">
                                     <h3>Listen to our international speakers</h3>
                                 </div>
-                                <?php
-                                    $authors = wp_list_authors(array(
-                                        'show_fullname' => 1,
-                                        'exclude_admin' => 0,
-                                        'optioncount'   => 0,
-                                        'echo'          => 0,
-                                        'orderby'       => 'post_count',
-                                        'order'         => 'DESC',
-                                        'number'        => 3,
-                                        'style'         => 0,
-                                        'html'          => 0
-                                    ));
-                                    #dummy data
-                                    $authors = array("Annemarie", "Hans", "Kim");
+                                    <?php                                        
+                                        //Set Query args
+                                        $args = array(
+                                            'post_type' => 'post',
+                                            'category_name' => 'Interview',
+                                            'post_per_page' => 3
+                                        );
 
-                                    foreach ($authors as $author) {
-                                        echo "
-                                            <div class=\"cell small-4\" style=\"background-color:red\">
-                                               <img src=\"#\" alt=\"$author\">
-                                               <p>Hi, I'm $author ... Author description</p>
-                                            </div>
-                                            ";
-                                    }
-                                ?>
+                                        $query = new WP_Query($args);
+                                        //Start the Loop
+                                        while ($query->have_posts()) : $query->the_post();
+                                    ?>
+                                    <div class="cell small-4" style="background-color:red">
+                                        <img src="#" alt="<?php the_title()?>">
+                                        <p><?php the_title()?></p>
+                                    </div>
+                                        
+                                    <?php
+                                        // end loop, reset query
+                                        endwhile;
+                                        wp_reset_query();
+                                    ?>
                             </div>
                         </div>    
                     </div>
                     <div class="cell" style="background-color:green">
-                        <p>Read our articles - not needed ?? Watch our Webinar listet alles zum Tag blockchain. Ich wollte keinen Slider einbauen.. </p>
+                        <p>Read our articles</p>
+                        <div class="grid-container">
+                            <div class="grid-x grid-margin-x">
+                            <?php                                        
+                                //Set Query args
+                                $args = array(
+                                    'post_type' => 'post',
+                                    'category_name' => 'Fachartikel',
+                                    'post_per_page' => 3
+                                );
+
+                                $query = new WP_Query($args);
+                                //Start the Loop
+                                while ($query->have_posts()) : $query->the_post();
+                            ?>
+                            <div class="cell small-4" style="background-color:darkgreen">
+                                <img src="#" alt="<?php the_title()?>">
+                                <p><?php the_title()?></p>
+                            </div>
+                                    
+                            <?php
+                                // end loop, reset query
+                                endwhile;
+                                wp_reset_query();
+                            ?>
+                            </div>
+                        </div>
                     </div>
                     <div class="cell" style="background-color:hotpink">                    
                         <div class="grid-container">
@@ -134,19 +156,27 @@ get_header();
                                     <a href="#" class="button" target="_self">Show Bestseller</a>
                                 </div>
                                 
-                                <?php
-                                    #ToDo: get all courses from somewhere
-                                    #dummy data
-                                    $courses = array("Era of Cooperation", "Data Security", "Network Society");
+                                <?php                                        
+                                    //Set Query args
+                                    $args = array(
+                                        'post_type' => 'post',
+                                        'category_name' => 'Courses', //TODO Which category?
+                                        'post_per_page' => 3
+                                    );
 
-                                    foreach ($courses as $course) {
-                                        echo "
-                                            <div class=\"cell small-4\" style=\"background-color:pink\">
-                                                <img src=\"#\" alt=\"$course\">
-                                                <p>Course Description</p>
-                                            </div>
-                                            ";
-                                    }
+                                    $query = new WP_Query($args);
+                                    //Start the Loop
+                                    while ($query->have_posts()) : $query->the_post();
+                                ?>
+                                <div class="cell small-4" style="background-color:pink">
+                                    <img src="#" alt="<?php the_title()?>">
+                                    <p><?php the_title()?></p>
+                                </div>
+                                        
+                                <?php
+                                    // end loop, reset query
+                                    endwhile;
+                                    wp_reset_query();
                                 ?>
                             </div>
                         </div>    
