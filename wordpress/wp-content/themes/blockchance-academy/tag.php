@@ -105,6 +105,7 @@ get_header();
                                         while ($query->have_posts()) : $query->the_post();
                                     ?>
                                     <div class="cell small-4">
+                                        <?php the_post_thumbnail( 'thumbnail' ); ?>
                                         <img src="#" alt="<?php the_title()?>">
                                         <p><?php the_title()?></p>
                                     </div>
