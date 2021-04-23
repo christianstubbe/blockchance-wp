@@ -45,39 +45,46 @@ get_header();
                         <div class="grid-container">
                             <div class="grid-x grid-margin-x">
                                 <?php
-			                        /* Start the Loop */
-			                        while ( have_posts() ) :
-				                        the_post(); ?>
-	                        			<div class="cell small-4">
-                                            <article style="background-color:green" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                                <header class="entry-header">
-                                                    <?php
-                                                    if ( is_singular() ) :
-                                                        the_title( '<h1 class="entry-title">', '</h1>' );
-                                                    else :
-                                                        the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
-                                                    endif;
+                                    //Set Query args
+                                    $args = array(
+                                        'post_type' => 'post',
+                                        'category_name' => 'Webinar',
+                                        'post_per_page' => 3
+                                    );
 
-                                                    if ( 'post' === get_post_type() ) :
-                                                        ?>
-                                                        <div class="entry-meta">
-                                                            <?php
-                                                            //blockchance_academy_posted_on();
-                                                            blockchance_academy_posted_by();
-                                                            ?>
-                                                        </div><!-- .entry-meta -->
-                                                    <?php endif; ?>
-                                                </header><!-- .entry-header -->
-                                                <?php blockchance_academy_post_thumbnail(); ?>
-                                            </article><!-- #post-<?php the_ID(); ?> -->
-                                        </div>
-                                    <?php
-                                        endwhile;
-                                        the_posts_navigation();
-                                        else :
-                                            get_template_part( 'template-parts/content-tag', 'none' );
-                                        endif;
-                                    ?>
+                                    $query = new WP_Query($args);
+			                        //Start the Loop
+			                        while ($query->have_posts()) : $query->the_post();
+                                ?>
+                                <div class="cell small-4">
+                                    <article style="background-color:green" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                        <header class="entry-header">
+                                            <?php
+                                                if ( is_singular() ) :
+                                                    the_title( '<h1 class="entry-title">', '</h1>' );
+                                                else :
+                                                    the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+                                                endif;
+
+                                                if ( 'post' === get_post_type() ) :
+                                            ?>
+                                                <div class="entry-meta">
+                                                    <?php blockchance_academy_posted_by();?>
+                                                </div><!-- .entry-meta -->
+                                            <?php endif; ?>
+                                        </header><!-- .entry-header -->
+                                        <?php blockchance_academy_post_thumbnail(); ?>
+                                    </article><!-- #post-<?php the_ID(); ?> -->
+                                </div>
+                                <?php
+                                    // end loop, reset query
+                                    endwhile;
+                                    wp_reset_query();
+                                    the_posts_navigation();
+                                    else :
+                                        get_template_part( 'template-parts/content-tag', 'none' );
+                                    endif;
+                                ?>
                             </div>
                         </div>
                     </div>
