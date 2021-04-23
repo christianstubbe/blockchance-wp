@@ -23,7 +23,7 @@ get_header();
             
             <div class="grid-container">
                 <div class="grid-y" >
-                    <div class="cell" style="background-color:blue">
+                    <div class="cell">
                         <h2>Current Tag: <?php single_tag_title(); ?></h2>
                         <p><?php tag_description();?></p>
                         <div class="grid-container">
@@ -34,11 +34,11 @@ get_header();
                         </div>
                          
                     </div>
-                    <div class="cell" style="background-color:darkblue">
+                    <div class="cell">
                         <h3>Get in-depth knowledge on <?php single_tag_title();?></h3>
                         <p>Yada Yada ... Lorem all the time</p>
                     </div>
-                    <div class="cell" style="background-color:darkgreen">
+                    <div class="cell">
                         <h3>Watch our webinars</h3>
                         <div class="grid-container">
                             <div class="grid-x grid-margin-x">
@@ -55,7 +55,7 @@ get_header();
 			                        while ($query->have_posts()) : $query->the_post();
                                 ?>
                                 <div class="cell small-4">
-                                    <article style="background-color:green" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                         <header class="entry-header">
                                             <?php
                                                 if ( is_singular() ) :
@@ -86,7 +86,7 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <div class="cell" style="background-color:darkred">
+                    <div class="cell">
                         <div class="grid-container">
                             <div class="grid-x grid-margin-x">
                                 <div class="cell">
@@ -104,7 +104,7 @@ get_header();
                                         //Start the Loop
                                         while ($query->have_posts()) : $query->the_post();
                                     ?>
-                                    <div class="cell small-4" style="background-color:red">
+                                    <div class="cell small-4">
                                         <img src="#" alt="<?php the_title()?>">
                                         <p><?php the_title()?></p>
                                     </div>
@@ -113,14 +113,11 @@ get_header();
                                         // end loop, reset query
                                         endwhile;
                                         wp_reset_query();    
-                                        else :
-                                            get_template_part( 'template-parts/content', 'none' );
-                                        endif;
                                     ?>
                             </div>
                         </div>    
                     </div>
-                    <div class="cell" style="background-color:green">
+                    <div class="cell">
                         <p>Read our articles</p>
                         <div class="grid-container">
                             <div class="grid-x grid-margin-x">
@@ -136,7 +133,7 @@ get_header();
                                 //Start the Loop
                                 while ($query->have_posts()) : $query->the_post();
                             ?>
-                            <div class="cell small-4" style="background-color:darkgreen">
+                            <div class="cell small-4">
                                 <img src="#" alt="<?php the_title()?>">
                                 <p><?php the_title()?></p>
                             </div>
@@ -145,14 +142,11 @@ get_header();
                                 // end loop, reset query
                                 endwhile;
                                 wp_reset_query();
-                                else :
-                                    get_template_part( 'template-parts/content', 'none' );
-                                endif;
                             ?>
                             </div>
                         </div>
                     </div>
-                    <div class="cell" style="background-color:hotpink">                    
+                    <div class="cell">                    
                         <div class="grid-container">
                             <div class="grid-x grid-margin-x">
                                 <div class="cell small-8">
@@ -174,7 +168,7 @@ get_header();
                                     //Start the Loop
                                     while ($query->have_posts()) : $query->the_post();
                                 ?>
-                                <div class="cell small-4" style="background-color:pink">
+                                <div class="cell small-4">
                                     <img src="#" alt="<?php the_title()?>">
                                     <p><?php the_title()?></p>
                                 </div>
@@ -183,9 +177,6 @@ get_header();
                                     // end loop, reset query
                                     endwhile;
                                     wp_reset_query();
-                                    else :
-                                        get_template_part( 'template-parts/content', 'none' );
-                                    endif;
                                 ?>
                             </div>
                         </div>    
