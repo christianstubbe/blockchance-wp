@@ -58,6 +58,7 @@ get_header();
                                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                         <header class="entry-header">
                                             <?php
+                                                the_post_thumbnail( 'thumbnail' );
                                                 if ( is_singular() ) :
                                                     the_title( '<h1 class="entry-title">', '</h1>' );
                                                 else :
@@ -106,7 +107,6 @@ get_header();
                                     ?>
                                     <div class="cell small-4">
                                         <?php the_post_thumbnail( 'thumbnail' ); ?>
-                                        <img src="#" alt="<?php the_title()?>">
                                         <p><?php the_title()?></p>
                                     </div>
                                         
@@ -119,7 +119,7 @@ get_header();
                         </div>    
                     </div>
                     <div class="cell">
-                        <p>Read our articles</p>
+                        <h3>Read our articles</h3>
                         <div class="grid-container">
                             <div class="grid-x grid-margin-x">
                             <?php                                        
@@ -135,7 +135,7 @@ get_header();
                                 while ($query->have_posts()) : $query->the_post();
                             ?>
                             <div class="cell small-4">
-                                <img src="#" alt="<?php the_title()?>">
+                                <?php the_post_thumbnail( 'thumbnail' ); ?>
                                 <p><?php the_title()?></p>
                             </div>
                                     
@@ -170,7 +170,7 @@ get_header();
                                     while ($query->have_posts()) : $query->the_post();
                                 ?>
                                 <div class="cell small-4">
-                                    <img src="#" alt="<?php the_title()?>">
+                                    <?php the_post_thumbnail( 'thumbnail' ); ?>
                                     <p><?php the_title()?></p>
                                 </div>
                                         
