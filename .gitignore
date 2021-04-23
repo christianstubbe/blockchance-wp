@@ -5,7 +5,7 @@
 .RData
 .DS_Store
 wordpress/*
-!wordpress/wp-content/themes/blockchance-academy
+!wordpress/wp-content/themes/blockchance-academy/*
 !wordpress/.keep
 mysql/*
 !mysql/.keep

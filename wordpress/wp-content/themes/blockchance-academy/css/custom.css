@@ -93,4 +93,15 @@ header#masthead > div.is-anchored {
 
 #page-main p{
     width: 100%;
+/* Footer
+--------------------------------------------- */
+
+footer#colophon {
+    padding: 30px 200px 0px 200px;
+    color: #999999;
+    font-size: 0.9em;
+}
+
+footer#colophon a{
+    color: #999999;
 }
