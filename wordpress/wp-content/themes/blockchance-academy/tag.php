@@ -80,7 +80,7 @@ get_header();
                                     wp_reset_query();
                                     the_posts_navigation();
                                     else :
-                                        get_template_part( 'template-parts/content-tag', 'none' );
+                                        get_template_part( 'template-parts/content', 'none' );
                                     endif;
                                 ?>
                             </div>
@@ -112,7 +112,10 @@ get_header();
                                     <?php
                                         // end loop, reset query
                                         endwhile;
-                                        wp_reset_query();
+                                        wp_reset_query();    
+                                        else :
+                                            get_template_part( 'template-parts/content', 'none' );
+                                        endif;
                                     ?>
                             </div>
                         </div>    
@@ -142,6 +145,9 @@ get_header();
                                 // end loop, reset query
                                 endwhile;
                                 wp_reset_query();
+                                else :
+                                    get_template_part( 'template-parts/content', 'none' );
+                                endif;
                             ?>
                             </div>
                         </div>
@@ -177,6 +183,9 @@ get_header();
                                     // end loop, reset query
                                     endwhile;
                                     wp_reset_query();
+                                    else :
+                                        get_template_part( 'template-parts/content', 'none' );
+                                    endif;
                                 ?>
                             </div>
                         </div>    
