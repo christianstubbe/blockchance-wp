@@ -12,39 +12,273 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+		<div class="bx-sidebar">
+			<strong>
+				Topic
+			</strong>
+			<div class="bx-filter-container"></div>
+			
+			<strong>
+				Category
+			</strong>
+			<div class="bx-filter-container"></div>
+			
+			<strong>
+				Level
+			</strong>
+			<div class="bx-filter-container"></div>
 
-			<header class="page-header">
-				<h1 class="page-title">
+			<strong>
+				Length
+			</strong>
+			<div class="bx-filter-container"></div>
+		</div>
+
+		<div class="bx-main-container">
+			<div class="bx-search-banner">
+				<h2>Bitcoin</h2>
+				<div class="bx-description">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+				<div class="bx-more-container">
+					<a href="/">More Info</a>
+				</div>
+			</div>
+
+
+			<div class="bx-items-row-container">
+				<div class="bx-row-title">Search Result</div>
+				<div class="bx-items-container">
+					<?php if ( have_posts() ) : ?>
+
 					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'blockchance-academy' ), '<span>' . get_search_query() . '</span>' );
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
+						get_template_part( 'template-parts/content', 'search' );
+					endwhile;
+
+					// the_posts_navigation();
+					else :
+					get_template_part( 'template-parts/content', 'none' );
+					endif;
 					?>
-				</h1>
-			</header><!-- .page-header -->
+				</div>
+			</div>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+			<div class="bx-items-row-container">
+				<div class="bx-row-title">This might be interesting for you</div>
+				<div class="bx-items-container">
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
 
-			endwhile;
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
 
-			the_posts_navigation();
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
 
-		else :
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
 
-			get_template_part( 'template-parts/content', 'none' );
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
 
-		endif;
-		?>
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bx-items-row-container">
+				<div class="bx-row-title">Top 10 Courses</div>
+				<div class="bx-items-container">
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bx-items-row-container">
+				<div class="bx-row-title">Intermediate</div>
+				<div class="bx-items-container">
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bx-items-row-container">
+				<div class="bx-row-title">Blockchain</div>
+				<div class="bx-items-container">
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+
+
+					<div class="bx-item">
+						<div class="bx-image"></div>
+						<div class="bx-title">Security in Blockchain</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
 
 	</main><!-- #main -->
 

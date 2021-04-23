@@ -145,6 +145,7 @@ function blockchance_academy_scripts() {
 	wp_enqueue_style( 'blockchance-foundation', 'https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css' );
 	wp_enqueue_style( 'blockchance-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'blockchance-custom-style', get_template_directory_uri() . '/css/custom.css', array(), _S_VERSION );
+	wp_enqueue_style( 'blockchance-bx-style', get_template_directory_uri() . '/css/bx.css', array(), _S_VERSION );
 	wp_style_add_data( 'blockchance-academy-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'blockchance-academy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
