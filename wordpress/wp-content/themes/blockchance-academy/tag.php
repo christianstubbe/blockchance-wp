@@ -25,7 +25,7 @@ get_header();
                 <div class="grid-y" >
                     <div class="cell">
                         <h2>Current Tag: <?php single_tag_title(); ?></h2>
-                        <p><?php tag_description();?></p>
+                        <?php echo tag_description(get_queried_object()->term_id);?>
                         <div class="grid-container">
                             <div class="grid-x">
                                 <div class="cell small-8"><h3>You might want to check out:<h3></div>
