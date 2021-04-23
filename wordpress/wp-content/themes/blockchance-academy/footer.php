@@ -37,9 +37,9 @@
 			  <div class="cell">Germany</div>
 			</div>
 			<div class="cell small-3">
-			<div class="cell"><a href="">Imprint</a></div>
-				<div class="cell"><a href="">Privacy</a></div>
-				<div class="cell"><a href="">legal</a></div>
+			<div class="cell"><a href="/imprint">Imprint</a></div>
+				<div class="cell"><a href="/privacy-policy">Privacy</a></div>
+				<div class="cell"><a href="/legal">legal</a></div>
 				<div class="cell">© 2021 Blockchance</div>
 			</div>
 		</div>

@@ -75,3 +75,22 @@ header#masthead > div.is-anchored {
     top: 0;
     z-index: 0;
 }
+
+/* page.php
+--------------------------------------------- */
+
+.page{
+    margin-top: 20px;
+}
+
+#page-title h1{
+    color: #111;
+}
+
+#page-main h4{
+    width: 100%;
+}
+
+#page-main p{
+    width: 100%;
+}

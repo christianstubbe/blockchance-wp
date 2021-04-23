@@ -10,25 +10,24 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
 
-	<?php blockchance_academy_post_thumbnail(); ?>
+	<!--- #title ------------------>
+	<div class="grid-wrapper" id="page-title">
+		<div class="grid-container">
+			<div class="grid-x">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</div>
+		</div>
+	</div>
 
-<h1>Page > Content </h1>
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blockchance-academy' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+	<!--- #site-main ------------------>
+	<div class="grid-wrapper" id="page-main">
+		<div class="grid-container">
+			<div class="grid-x">
+				<?php the_content(); ?>
+			</div>
+		</div>
+	</div>
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
