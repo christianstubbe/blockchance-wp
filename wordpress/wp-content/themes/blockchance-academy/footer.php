@@ -10,15 +10,6 @@
  */
 
 ?>
-
-<!-- <div class="grid-wrapper" id="word-cloud">
-	<div class="grid-x align-center">
-		<div class="cell">
-
-		</div>
-	</div>
-</div> -->
-
 	<footer id="colophon" class="site-footer">
 		<div class ="grid-x align-spaced">
 			<div class="cell small-3">

@@ -24,6 +24,7 @@ get_header();
 				<div class="grid-x align-middle">
 					<div class="cell small-12 medium-6">
 						<h1 class="page-title"><?php single_post_title(); ?></h1>
+						<h3>Check out our learning paths for inspiration.</h3>
 					</div>
 				</div>
 			</div>
@@ -33,7 +34,7 @@ get_header();
 		<!--- #site-main ------------------>
 		<main class="grid-wrapper" id="site-main">
 			<div class="grid-container">
-				<div class="grid-x">
+				<div class="grid-x main-content">
 					<?php the_content(); ?>
 				</div>
 			</div>
