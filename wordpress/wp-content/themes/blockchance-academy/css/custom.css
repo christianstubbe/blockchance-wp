@@ -107,6 +107,14 @@ header#masthead > div.is-anchored {
     color: #111;
 }
 
+#single-main h2{
+    width: 100%;
+}
+
+#single-main h3{
+    width: 100%;
+}
+
 #single-main h4{
     width: 100%;
 }
