@@ -126,6 +126,117 @@ header#masthead > div.is-anchored {
     
 }
 
+/* tag.php
+--------------------------------------------- */
+
+.tag{
+    margin-top: 20px;
+    padding: 0 7% 7% 7%;
+}
+
+.tag h1{
+    text-align: center;
+    color: white;
+}
+
+#tag-summary{
+    background-color: #000b25;
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+
+.tag-description{
+    color: white;
+    text-align: center;
+    padding: 0 5% 0 5%;
+}
+
+.tag-checkout{
+    margin-bottom: 1%;
+}
+
+.tag-checkout h4{
+    color: white;
+    text-align: center;
+}
+
+.tag-checkout .button{
+    margin: 0 1% 0% 1%;
+}
+
+.tag .section-title{
+    text-align: center;
+    font-size: 1.3em;
+    margin: 2% 0 2% 0;
+    font-weight: bold;
+}
+
+.tag .section{
+    margin-bottom: 2%;
+}
+
+.tag .uneven{
+    background-color: #000b25;
+    border-radius: 20px;
+    padding: 5% 0 2% 0;
+}
+
+.tag .uneven-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 5% 0 5%;
+}
+
+.tag .uneven-img-container img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 20px;
+}
+
+.tag .uneven h3{
+    text-align: center;
+    margin-top: 3%;
+}
+
+.tag .uneven h3 a{
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.tag .even{
+    border-radius: 20px;
+    padding: 5% 0 2% 0;
+}
+
+.tag .even-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10%;
+}
+
+.tag .even-img-container img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 100%;
+}
+
+.tag .even h3{
+    text-align: center;
+}
+
+.tag .even h3 a{
+    color: black;
+    font-size: 0.8em;
+    text-align: center;
+}
+
 /* Footer
 --------------------------------------------- */
 
