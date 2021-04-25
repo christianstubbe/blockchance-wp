@@ -10,29 +10,27 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) :
+	<!--- #title ------------------>
+	<div class="grid-wrapper" id="single-title">
+		<div class="grid-container">
+			<div class="grid-x">
+			<?php 
+				if ( is_singular() ) :
+					the_title( '<h1 class="entry-title">', '</h1>' );
+				else :
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				endif;
 			?>
-			<div class="entry-meta">
-				<?php
-				blockchance_academy_posted_on();
-				blockchance_academy_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+			</div>
+		</div>
+	</div>
 
-	<?php blockchance_academy_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
+	<!--- #site-main ------------------>
+	<div class="grid-wrapper" id="single-main">
+		<div class="grid-container">
+			<div class="grid-x">
+			<?php
 		the_content(
 			sprintf(
 				wp_kses(
@@ -55,9 +53,10 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+			</div>
+		</div>
+	</div>
 
-	<footer class="entry-footer">
-		<?php blockchance_academy_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<!-- <?php blockchance_academy_post_thumbnail(); ?> -->
+
 </article><!-- #post-<?php the_ID(); ?> -->

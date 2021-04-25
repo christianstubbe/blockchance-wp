@@ -96,6 +96,26 @@ header#masthead > div.is-anchored {
     
 }
 
+/* single.php
+--------------------------------------------- */
+
+.single{
+    margin-top: 20px;
+}
+
+#single-title h1{
+    color: #111;
+}
+
+#single-main h4{
+    width: 100%;
+}
+
+#single-main p{
+    width: 100%;
+    
+}
+
 /* Footer
 --------------------------------------------- */
 
