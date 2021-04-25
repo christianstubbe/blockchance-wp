@@ -8,6 +8,7 @@ body, h1, h2, h3, h4, h5, h6 {
 h1 {
     color: #fff;
     font-size: 2.8em;
+    font-weight: bold;
 }
 
 button, .button, .button.disabled, .button.disabled:focus, .button.disabled:hover, .button[disabled], .button[disabled]:focus, .button[disabled]:hover {
@@ -20,6 +21,10 @@ button:focus, .button:hover {
     background: #111;
 }
 
+.wp-block-button__link {
+    background-color: #FF6135;
+    color: #ffffff;
+}
 
 /* Header
 --------------------------------------------- */
@@ -65,9 +70,10 @@ header#masthead > div.is-anchored {
     height: 500px;
 }
 
-#hero .page-title {
+#hero .page-title, #hero h3 {
     z-index: 1;
     position: relative;
+    color: #fff;
 }
 
 #hero img {
@@ -76,12 +82,36 @@ header#masthead > div.is-anchored {
     z-index: 0;
 }
 
+/* front-page.php
+--------------------------------------------- */
+
+.grid-x.main-content {
+    display: block;
+}
+
+.main-content input[type="search"] {
+    padding: 12px;
+    height: 50px;
+    font-size: 18px;
+    margin: 0;
+}
+
+.wp-block-search .wp-block-search__label {
+    width: auto!important;
+}
+
+.wp-block-search .wp-block-search__button {
+    background-color: #FF6135;
+    color: #fff;
+    border: 0;
+}
+
 /* page.php
 --------------------------------------------- */
 
 .page{
-    margin-top: 20px;
-    padding: 0 7% 0 7%;
+    /* margin-top: 20px;*/
+    /* padding: 0 7% 0 7%;*/
 }
 
 #page-title h1{
@@ -89,16 +119,18 @@ header#masthead > div.is-anchored {
 }
 
 #page-main h4{
-    width: 100%;
+    /* width: 100%; */
 }
 
 #page-main p{
-    width: 100%;
+    /* width: 100%; */
     
 }
 
 /* single.php
 --------------------------------------------- */
+
+/* 
 
 .single{
     margin-top: 20px;
@@ -126,11 +158,13 @@ header#masthead > div.is-anchored {
     
 }
 
+*/
+
 /* Footer
 --------------------------------------------- */
 
 footer#colophon {
-    padding: 30px 200px 0px 200px;
+    /* padding: 30px 200px 0px 200px; */
     color: #999999;
     font-size: 0.9em;
 }
