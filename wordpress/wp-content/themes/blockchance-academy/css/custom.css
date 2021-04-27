@@ -64,6 +64,7 @@ header#masthead > div.is-anchored {
 #hero {
     position: relative;
     overflow: hidden;
+    background-color: black;
 }
 
 #hero .grid-x {
@@ -80,6 +81,8 @@ header#masthead > div.is-anchored {
     position: absolute;
     top: 0;
     z-index: 0;
+    width: 100%;
+    opacity: 0.65;
 }
 
 /* front-page.php
