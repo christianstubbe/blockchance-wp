@@ -99,6 +99,7 @@ header#masthead > div.is-anchored {
     margin: 0;
     border: 0px solid white;
     border-bottom: 3px solid #25a4dd;
+    box-shadow: none;
 }
 
 .wp-block-search .wp-block-search__label {
