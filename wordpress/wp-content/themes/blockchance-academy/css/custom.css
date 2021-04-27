@@ -97,6 +97,8 @@ header#masthead > div.is-anchored {
     height: 50px;
     font-size: 18px;
     margin: 0;
+    border: 0px solid white;
+    border-bottom: 3px solid #25a4dd;
 }
 
 .wp-block-search .wp-block-search__label {
@@ -107,6 +109,7 @@ header#masthead > div.is-anchored {
     background-color: #FF6135;
     color: #fff;
     border: 0;
+    border-radius: 100px;
 }
 
 /* page.php
