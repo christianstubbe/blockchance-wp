@@ -283,6 +283,7 @@ footer#colophon {
     /* padding: 30px 200px 0px 200px; */
     color: #999999;
     font-size: 0.9em;
+    text-align: center;
 }
 
 footer#colophon a{
