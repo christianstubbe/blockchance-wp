@@ -5,8 +5,12 @@
 .RData
 .DS_Store
 wordpress/*
-!wordpress/wp-content/themes/blockchance-academy/*
+!wordpress/wp-content
+wordpress/wp-content/*
+!wordpress/wp-content/themes/
 !wordpress/.keep
+**/*/node_modules/
+**/*/package-lock.json
 mysql/*
 !mysql/.keep
 logs/nginx/*
