@@ -27,6 +27,6 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./wordpress/wp-content/themes/blockchance-academy/
         server-dir: ./wp-content/themes/blockchance-academy/
-        protocol: ftps
+        protocol: ftps-legacy
 
         
