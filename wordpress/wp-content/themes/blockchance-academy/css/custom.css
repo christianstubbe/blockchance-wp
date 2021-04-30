@@ -210,8 +210,10 @@ header#masthead > div.is-anchored {
     font-weight: bold;
 }
 
-.tag .section{
-    margin-bottom: 2%;
+.tag .section {
+    margin-bottom: 1%;
+    padding-bottom: 4%;
+    border-bottom: 2px solid lightgrey;
 }
 
 .tag .uneven{

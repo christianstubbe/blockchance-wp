@@ -30,21 +30,31 @@ get_header();
                          
                     </div>
 
-                    <div class="cell">
+                    <div class="cell"
+                        <?php                                        
+                            //Set Query args
+                            $args = array(
+                                'post_type' => 'post',
+                                'category_name' => 'Webinar',
+                                'post_per_page' => 3
+                            );
+                            $query = new WP_Query($args);
+                            
+                            if ( $query->have_posts() == False) :
+                                echo( 'style="display: none"' );
+                            else :
+                                
+                            endif;
+                            ?> 
+                            
+ 
+                    >
                         <h3 class="section-title">Watch our webinars</h3>
                         <div class="grid-container section">
                             <div class="grid-x grid-margin-x align-center">
-                                <?php
-                                    //Set Query args
-                                    $args = array(
-                                        'post_type' => 'post',
-                                        'category_name' => 'Webinar',
-                                        'post_per_page' => 3
-                                    );
-
-                                    $query = new WP_Query($args);
-			                        //Start the Loop
-			                        while ($query->have_posts()) : $query->the_post();
+                                <?php 
+                                    //Start the Loop
+                                     while ($query->have_posts()) : $query->the_post();
                                 ?>
                                 <div class="cell small-4">
                                     <article class="uneven" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -76,22 +86,30 @@ get_header();
                         </div>
                     </div>
 
-                    <hr>
 
-                    <div class="cell">
+                    <div class="cell"
+                        <?php                                        
+                            //Set Query args
+                            $args = array(
+                                'post_type' => 'post',
+                                'category_name' => 'Interview',
+                                'post_per_page' => 3
+                            );
+                            $query = new WP_Query($args);
+                            
+                            if ( $query->have_posts() == False) :
+                                echo( 'style="display: none"' );
+                            else :
+                                
+                            endif;
+                        ?>  
+                    >
                         <h3 class="section-title">Read our Interviews</h3>
-                        <div class="grid-container">
+                        <div class="grid-container section">
                             <div class="grid-x grid-margin-x align-center">
-                            <?php                                        
-                                //Set Query args
-                                $args = array(
-                                    'post_type' => 'post',
-                                    'category_name' => 'Interview',
-                                    'post_per_page' => 3
-                                );
-                                $query = new WP_Query($args);
+                            <?php 
                                 //Start the Loop
-                                while ($query->have_posts()) : $query->the_post();
+                                    while ($query->have_posts()) : $query->the_post();
                             ?>
                             <div class="cell small-4">
                                 <article class="even" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -119,6 +137,213 @@ get_header();
                             </div>
                         </div>
                     </div>
+  
+
+                    <div class="cell"
+                        <?php                                        
+                            //Set Query args
+                            $args = array(
+                                'post_type' => 'post',
+                                'category_name' => 'Definition',
+                                'post_per_page' => 3
+                            );
+                            $query = new WP_Query($args);
+                            
+                            if ( $query->have_posts() == False) :
+                                echo( 'style="display: none"' );
+                            else :
+                                
+                            endif;
+                        ?>  
+                    >
+                        <h3 class="section-title">Get to know something new with these definitions</h3>
+                        <div class="grid-container section">
+                            <div class="grid-x grid-margin-x align-center">
+                            <?php 
+                                //Start the Loop
+                                    while ($query->have_posts()) : $query->the_post();
+                            ?>
+                                <div class="cell small-4">
+                                    <article class="uneven" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                            <div class="uneven-img-container">
+                                                <?php blockchance_academy_post_thumbnail(); ?>
+                                            </div>
+                                            <?php
+                                                if ( is_singular() ) :
+                                                    the_title( '<h1 class="entry-title">', '</h1>' );
+                                                else :
+                                                    the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+                                                endif;
+
+                                                if ( 'post' === get_post_type() ) :
+                                            ?>
+                                            <?php endif; ?>
+                                    </article><!-- #post-<?php the_ID(); ?> -->
+                                </div>
+                                <?php
+                                    // end loop, reset query
+                                    endwhile;
+                                    wp_reset_query();
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="cell"
+                        <?php                                        
+                            //Set Query args
+                            $args = array(
+                                'post_type' => 'post',
+                                'category_name' => 'Bericht',
+                                'post_per_page' => 3
+                            );
+                            $query = new WP_Query($args);
+                            
+                            if ( $query->have_posts() == False) :
+                                echo( 'style="display: none"' );
+                            else :
+                                
+                            endif;
+                        ?>            
+                    >
+                        <h3 class="section-title">You need a deep dive? Read these reports!</h3>
+                        <div class="grid-container section">
+                            <div class="grid-x grid-margin-x align-center">
+                            <?php 
+                                //Start the Loop
+                                    while ($query->have_posts()) : $query->the_post();
+                            ?>
+                            <div class="cell small-4">
+                                <article class="even" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                    <div class="even-img-container">
+                                        <?php blockchance_academy_post_thumbnail(); ?>
+                                    </div>
+                                    <?php
+                                        if ( is_singular() ) :
+                                            the_title( '<h1 class="entry-title">', '</h1>' );
+                                        else :
+                                            the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+                                        endif;
+
+                                        if ( 'post' === get_post_type() ) :
+                                    ?>
+                                    <?php endif; ?>
+                                </article><!-- #post-<?php the_ID(); ?> -->
+                            </div>
+                                    
+                            <?php
+                                // end loop, reset query
+                                endwhile;
+                                wp_reset_query();
+                            ?>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="cell"
+                        <?php                                        
+                            //Set Query args
+                            $args = array(
+                                'post_type' => 'post',
+                                'category_name' => 'Pressebericht',
+                                'post_per_page' => 3
+                            );
+                            $query = new WP_Query($args);
+                            
+                            if ( $query->have_posts() == False) :
+                                echo( 'style="display: none"' );
+                            else :
+                                
+                            endif;
+                        ?>   
+                    >
+                        <h3 class="section-title">What do others have to say on this topic? Find out in these press reports</h3>
+                        <div class="grid-container section">
+                            <div class="grid-x grid-margin-x align-center">
+                            <?php 
+                                //Start the Loop
+                                    while ($query->have_posts()) : $query->the_post();
+                            ?>
+                                <div class="cell small-4">
+                                    <article class="uneven" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                            <div class="uneven-img-container">
+                                                <?php blockchance_academy_post_thumbnail(); ?>
+                                            </div>
+                                            <?php
+                                                if ( is_singular() ) :
+                                                    the_title( '<h1 class="entry-title">', '</h1>' );
+                                                else :
+                                                    the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+                                                endif;
+
+                                                if ( 'post' === get_post_type() ) :
+                                            ?>
+                                            <?php endif; ?>
+                                    </article><!-- #post-<?php the_ID(); ?> -->
+                                </div>
+                                <?php
+                                    // end loop, reset query
+                                    endwhile;
+                                    wp_reset_query();
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="cell"
+                        <?php                                        
+                            //Set Query args
+                            $args = array(
+                                'post_type' => 'post',
+                                'category_name' => 'Kommentar',
+                                'post_per_page' => 3
+                            );
+                            $query = new WP_Query($args);
+                            
+                            if ( $query->have_posts() == False) :
+                                echo( 'style="display: none"' );
+                            else :
+                                
+                            endif;
+
+                            //Start the Loop
+                            while ($query->have_posts()) : $query->the_post();
+                        ?>                    
+                    >
+                        <h3 class="section-title">You can check out the opinion of our authors in these comments</h3>
+                        <div class="grid-container section">
+                            <div class="grid-x grid-margin-x align-center">
+                            
+                            <div class="cell small-4">
+                                <article class="even" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                    <div class="even-img-container">
+                                        <?php blockchance_academy_post_thumbnail(); ?>
+                                    </div>
+                                    <?php
+                                        if ( is_singular() ) :
+                                            the_title( '<h1 class="entry-title">', '</h1>' );
+                                        else :
+                                            the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+                                        endif;
+
+                                        if ( 'post' === get_post_type() ) :
+                                    ?>
+                                    <?php endif; ?>
+                                </article><!-- #post-<?php the_ID(); ?> -->
+                            </div>
+                                    
+                            <?php
+                                // end loop, reset query
+                                endwhile;
+                                wp_reset_query();
+                            ?>
+                            </div>
+                        </div>
+                    </div>
+                       
     
                 </div>
             </div>
