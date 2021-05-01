@@ -85,8 +85,7 @@ body.search {
     .bx-items-container {
         margin: 10px 0;
         display: flex;
-        flex-flow: nowrap;
-        overflow-x: scroll;
+        flex-flow: wrap;
 
         .bx-item {
             color: #fff;
