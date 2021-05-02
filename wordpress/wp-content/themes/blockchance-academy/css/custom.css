@@ -11,6 +11,11 @@ h1 {
     font-weight: bold;
 }
 
+h1.black {
+    color: #111;
+    text-align: center;
+}
+
 button, .button, .button.disabled, .button.disabled:focus, .button.disabled:hover, .button[disabled], .button[disabled]:focus, .button[disabled]:hover {
     background-color: #FF6135;
     color: #ffffff;
@@ -277,6 +282,25 @@ header#masthead > div.is-anchored {
     font-size: 0.8em;
     text-align: center;
 }
+
+#category-main{
+    padding-bottom: 7%;
+}
+
+.card {
+    background-color: #000b25;
+    color: #fff; 
+    border-radius: 20px;
+}
+
+.card-divider {
+    background-color: #000b25;
+}
+
+.card-section a.button{
+    color: white;
+}
+
 
 /* Footer
 --------------------------------------------- */
