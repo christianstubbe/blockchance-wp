@@ -13,7 +13,7 @@ get_header();
 <?php if ( have_posts() ) : ?>
 
 <!--- #site-main ------------------>
-<main class="grid-wrapper" id="site-main">
+<main class="grid-wrapper" id="category-main">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell small-12">
