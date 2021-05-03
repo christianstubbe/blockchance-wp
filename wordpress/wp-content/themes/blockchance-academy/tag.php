@@ -31,12 +31,15 @@ get_header();
                     </div>
 
                     <div class="cell"
-                        <?php                                        
+                        <?php
+                        
+                            $tag = single_tag_title();
                             //Set Query args
                             $args = array(
                                 'post_type' => 'post',
                                 'category_name' => 'Webinar',
-                                'post_per_page' => 3
+                                'post_per_page' => 3,
+                                'tag' => $tag
                             );
                             $query = new WP_Query($args);
                             
@@ -93,7 +96,8 @@ get_header();
                             $args = array(
                                 'post_type' => 'post',
                                 'category_name' => 'Interview',
-                                'post_per_page' => 3
+                                'post_per_page' => 3,
+                                'tag' => $tag
                             );
                             $query = new WP_Query($args);
                             
@@ -145,7 +149,8 @@ get_header();
                             $args = array(
                                 'post_type' => 'post',
                                 'category_name' => 'Definition',
-                                'post_per_page' => 3
+                                'post_per_page' => 3,
+                                'tag' => $tag
                             );
                             $query = new WP_Query($args);
                             
@@ -196,7 +201,8 @@ get_header();
                             $args = array(
                                 'post_type' => 'post',
                                 'category_name' => 'Bericht',
-                                'post_per_page' => 3
+                                'post_per_page' => 3,
+                                'tag' => $tag
                             );
                             $query = new WP_Query($args);
                             
@@ -248,7 +254,8 @@ get_header();
                             $args = array(
                                 'post_type' => 'post',
                                 'category_name' => 'Pressebericht',
-                                'post_per_page' => 3
+                                'post_per_page' => 3,
+                                'tag' => $tag
                             );
                             $query = new WP_Query($args);
                             
@@ -299,7 +306,8 @@ get_header();
                             $args = array(
                                 'post_type' => 'post',
                                 'category_name' => 'Kommentar',
-                                'post_per_page' => 3
+                                'post_per_page' => 3,
+                                'tag' => $tag
                             );
                             $query = new WP_Query($args);
                             
